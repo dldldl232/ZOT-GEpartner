@@ -57,6 +57,15 @@ h2 {
 margin-top: 0;
 }
 
+.choices {
+    width: 200px;
+}
+
+.choices__list--dropdown {
+    max-height: 150px;
+    overflow: auto;
+}
+
 /* Class badges */
 .class-badge {
 background-color: #e0e0e0;

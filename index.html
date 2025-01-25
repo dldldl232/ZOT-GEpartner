@@ -4,9 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZOT::GEpartner</title>
+
   <link rel="stylesheet" href="styles.css">
+
+  <!--include css or select2 and choices.js-->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" rel="stylesheet">
+
+  <!--include jQuery-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!--include select2-->
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+  <!--include choice.js-->
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> -->
+
 
 </head>
 
@@ -34,8 +52,8 @@
             </div>
 
             <div class="form-group">
-                <label for="past-classes">Past Classes</label>
-                <select id="past-classes">
+                <label for="past-classes-quarter">Past Classes</label>
+                <select id="past-classes-quarter">
                     <option disabled selected>Quarter</option>
                     <!--use js to dynamically add-->
                 </select>
@@ -43,11 +61,8 @@
                     <input type="text" id="past-classes" placeholder="Search..">
                     <span class="icon">🔍</span>
                 </div>
-                <div class="past-classes">
-                    <p>Fall 2024</p>
-                    <span class="class-badge">ICS 31</span>
-                    <span class="class-badge">ICS 32</span>
-                    <span class="class-badge">Soc Sci 3</span>
+                <div class="past-classes" id="past-classes-list">
+                    <!--will dynamically populate class-->
                 </div>
             </div>
 
@@ -68,7 +83,7 @@
             <div class="time-section">
                 <h3>Desired Time</h3>
                 <div class="form-group">
-                    <label for="time-day">Days</label>
+                    <label for="day-selec">Days</label>
                     <select id="day-selec" multiple>
                         <option value="monday">Monday</option>
                         <option value="tuesday">Tuesday</option>
@@ -76,17 +91,18 @@
                         <option value="thursday">Thursday</option>
                         <option value="friday">Friday</option>
                     </select>
-                </select>
             </div>
 
             <div class="form-group">
-                <label for="time-slot">Time</label>
-                <small>From</small>
-                <input type="time" id="time-start" name="time-start" min="8:00" max="22:00" required/>
-                <small>To</small>
-                <input type="time" id="time-end" name="time-end" min="8:00" max="22:00" required/>
-                </select>
+                <label for="time-start">Start Time</label>
+                <input type="time" id="time-start" name="time-start" min="08:00" max="22:00" required>
             </div>
+
+            <div class="form-group">
+                <label for="time-end">End Time</label>
+                <input type="time" id="time-end" name="time-end" min="08:00" max="22:00" required>
+            </div>
+
         </div>
      <button class="submit-btn">Submit</button>   
     </section>
@@ -132,6 +148,8 @@
     </section>
 </main>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

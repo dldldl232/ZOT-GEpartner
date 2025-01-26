@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql2');
+const userRoutes = require('./routes/userRoutes'); // Import user routes
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -8,6 +9,7 @@ const port = 3000;
 
 // Middleware to parse JSON
 app.use(express.json());
+app.use('/api', userRoutes);
 
 // Database connection
 const db = mysql.createConnection({
